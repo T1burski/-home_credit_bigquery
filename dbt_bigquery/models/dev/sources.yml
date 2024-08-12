@@ -1,0 +1,9 @@
+sources:
+  - name: raw
+    database: homecreditdatabase
+    schema: raw
+    tables:
+      - name: raw_bureau
+      - name: raw_dimensions
+      - name: raw_facts
+      - name: raw_target

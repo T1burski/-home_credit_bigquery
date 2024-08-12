@@ -1,0 +1,15 @@
+
+version: 2
+
+models:
+  - name: stg_bureau
+    description: "A starter dbt model"
+    columns:
+      - name: SK_ID_CURR
+        description: "ID of loan in our sample - one loan in our sample can have 0,1,2 or more related previous credits"
+        data_tests:
+          - not_null
+      - name: SK_ID_BUREAU
+        description: "Recoded ID of previous Credit Bureau credit related to our loan"
+        data_tests:
+          - not_null
