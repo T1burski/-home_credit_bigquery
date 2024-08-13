@@ -3,7 +3,7 @@ version: 2
 
 models:
   - name: stg_bureau
-    description: "A starter dbt model"
+    description: "Client data from credit in other financial institutions"
     columns:
       - name: SK_ID_CURR
         description: "ID of loan in our sample - one loan in our sample can have 0,1,2 or more related previous credits"
@@ -11,5 +11,30 @@ models:
           - not_null
       - name: SK_ID_BUREAU
         description: "Recoded ID of previous Credit Bureau credit related to our loan"
+        data_tests:
+          - not_null
+  - name: stg_dimensions
+    description: "Various data regarding the client IDs"
+    columns:
+      - name: SK_ID_CURR
+        description: "ID of loan in our sample"
+        data_tests:
+          - not_null
+  - name: stg_facts
+    description: "Fact table regarding the credit loans made per client ID"
+    columns:
+      - name: SK_ID_CURR
+        description: "ID of loan in our sample"
+        data_tests:
+          - not_null
+  - name: stg_target
+    description: "Information per client ID if a credit loan has had problems with payment"
+    columns:
+      - name: SK_ID_CURR
+        description: "ID of loan in our sample"
+        data_tests:
+          - not_null
+      - name: TARGET
+        description: "Binary indicator if a problem happend or not in payment for that client ID"
         data_tests:
           - not_null
