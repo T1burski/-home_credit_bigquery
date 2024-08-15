@@ -1,0 +1,22 @@
+
+version: 2
+
+models:
+  - name: prd_bureau
+    description: "Client data from credit in other financial institutions"
+    columns:
+      - name: SK_ID_CURR
+        description: "ID of loan in our sample - one loan in our sample can have 0,1,2 or more related previous credits"
+        data_tests:
+          - not_null
+      - name: SK_ID_BUREAU
+        description: "Recoded ID of previous Credit Bureau credit related to our loan"
+        data_tests:
+          - not_null
+  - name: prd_bureau_credit_info
+    description: "stg_bureau treated to bring for each SK_ID_CURR agg data"
+    columns:
+      - name: SK_ID_CURR
+        description: "ID of loan in our sample"
+        data_tests:
+          - not_null
