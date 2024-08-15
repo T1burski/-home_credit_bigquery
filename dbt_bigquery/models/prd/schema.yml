@@ -20,3 +20,39 @@ models:
         description: "ID of loan in our sample"
         data_tests:
           - not_null
+  - name: prd_facts
+    description: "stg_bureau treated to bring for each SK_ID_CURR agg data"
+    columns:
+      - name: SK_ID_CURR
+        description: "Fact table regarding the credit loans made per client ID"
+        data_tests:
+          - not_null
+  - name: prd_dimensions
+    description: "Various data regarding the client IDs"
+    columns:
+      - name: SK_ID_CURR
+        description: "ID of loan in our sample"
+        data_tests:
+          - not_null
+  - name: prd_target
+    description: "Information per client ID if a credit loan has had problems with payment"
+    columns:
+      - name: SK_ID_CURR
+        description: "ID of loan in our sample"
+        data_tests:
+          - not_null
+      - name: TARGET
+        description: "Binary indicator if a problem happend or not in payment for that client ID"
+        data_tests:
+          - not_null
+  - name: prd_analytical_base_table
+    description: "Table ready to be used for eda and apply predictions"
+    columns:
+      - name: SK_ID_CURR
+        description: "ID of loan in our sample"
+        data_tests:
+          - not_null
+      - name: TARGET
+        description: "Binary indicator if a problem happend or not in payment for that client ID"
+        data_tests:
+          - not_null
