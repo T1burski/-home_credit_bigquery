@@ -1,0 +1,9 @@
+sources:
+  - name: stg
+    database: homecreditdatabase
+    schema: stg
+    tables:
+      - name: stg_bureau
+      - name: stg_dimensions
+      - name: stg_facts
+      - name: stg_target

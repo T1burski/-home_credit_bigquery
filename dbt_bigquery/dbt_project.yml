@@ -33,5 +33,5 @@ models:
   my_dbt_bigquery_project:
     stg:
       +materialized: table
-    prod:
+    prd:
       +materialized: table
