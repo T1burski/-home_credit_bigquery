@@ -2,7 +2,7 @@ with
     target as (
         select
             SK_ID_CURR
-            , CAST(TARGET AS NUMERIC) AS TARGET
+            , TARGET
         from {{ source('raw', 'raw_target') }}
     )
 
