@@ -5,7 +5,7 @@ with
             , CODE_GENDER
             , FLAG_OWN_CAR
             , FLAG_OWN_REALTY
-            , CAST(CNT_CHILDREN AS NUMERIC) AS CNT_CHILDREN
+            , CAST(CNT_CHILDREN AS INT64) AS CNT_CHILDREN
             , NAME_CONTRACT_TYPE
             , NAME_TYPE_SUITE
             , NAME_INCOME_TYPE
