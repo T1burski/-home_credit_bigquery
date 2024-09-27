@@ -1,7 +1,7 @@
 with prod_target as (
 select
   *
-from {{ source('stg', 'stg_target') }}
+from {{ ref('stg_target') }}
 )
 select
 *

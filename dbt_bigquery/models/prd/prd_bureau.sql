@@ -1,7 +1,7 @@
 with prod_bureau as (
 select
   *
-from {{ source('stg', 'stg_bureau') }}
+from {{ ref('stg_bureau') }}
 )
 select
 *

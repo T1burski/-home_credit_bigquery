@@ -1,7 +1,7 @@
 with prod_dimensions as (
 select
   *
-from {{ source('stg', 'stg_dimensions') }}
+from {{ ref('stg_dimensions') }}
 )
 select
 *
